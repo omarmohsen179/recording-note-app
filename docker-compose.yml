@@ -21,13 +21,13 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD} # Use variable from .env
     ports:
       - "5432:5432"
-  # frontend:
-  #   build:
-  #     context: .
-  #     dockerfile: frontend/Dockerfile
-  #   ports:
-  #     - "3000:80"
-  #   depends_on:
-  #     - web
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - web
 # docker-compose exec web python manage.py makemigrations notes
 # docker-compose exec web python manage.py migrate
