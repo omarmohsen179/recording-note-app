@@ -20,7 +20,12 @@ function App() {
   return (
     <div className="App">
       {isAuthenticated ? (
-        <Notes onLogout={() => handleAuthChange(false)} />
+        <Notes
+          onLogout={() => {
+            localStorage.removeItem("token");
+            handleAuthChange(false);
+          }}
+        />
       ) : (
         <Auth onAuthSuccess={() => handleAuthChange(true)} />
       )}

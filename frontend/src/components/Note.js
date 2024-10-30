@@ -23,6 +23,7 @@ function Notes({ onLogout }) {
       const response = await getNotes();
       setNotes(response);
     } catch {
+      onLogout();
       alert("Failed to load notes");
     }
   };
@@ -54,7 +55,7 @@ function Notes({ onLogout }) {
       <input
         placeholder="Title"
         value={newNote.title}
-        style={{ padding: "5px" }}
+        style={{ margin: "5px" }}
         onChange={(e) => setNewNote({ ...newNote, title: e.target.value })}
       />
       <input

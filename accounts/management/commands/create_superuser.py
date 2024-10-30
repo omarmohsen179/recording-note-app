@@ -10,7 +10,7 @@ class Command(BaseCommand):
         User = get_user_model()
         superuser_username = "admin"  # Set your desired superuser username
         superuser_email = "admin@example.com"  # Set your desired superuser email
-        superuser_password = "superpassword"  # Set your desired superuser password
+        superuser_password = "admin"  # Set your desired superuser password
 
         # Check if the superuser already exists
         if not User.objects.filter(username=superuser_username).exists():
