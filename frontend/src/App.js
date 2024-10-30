@@ -5,14 +5,14 @@ import "./App.css";
 import axios from "axios";
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(
-    !!localStorage.getItem("token")
-  );
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   useEffect(() => {
+    console.log(localStorage.getItem("token"));
     if (localStorage.getItem("token")) {
       axios.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem(
         "token"
       )}`;
+      setIsAuthenticated(true);
     }
   }, []);
   const handleAuthChange = (status) => setIsAuthenticated(status);

@@ -12,8 +12,6 @@ class Note(models.Model):
 
 
 class Audio(models.Model):
-    note = models.ForeignKey(Note, related_name="audios", on_delete=models.CASCADE)
-    file = models.FileField(
-        upload_to="audios/"
-    )  # This will save audio files in media/audios/
-    uploaded_at = models.DateTimeField(auto_now_add=True)
+    note = models.ForeignKey(Note, on_delete=models.CASCADE)
+    file = models.FileField(upload_to="audio/")
+    created_at = models.DateTimeField(auto_now_add=True)

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { login, register } from "../services/api";
-
+import axios from "axios";
 function Auth({ onAuthSuccess }) {
   const [isRegister, setIsRegister] = useState(false);
   const [form, setForm] = useState({ username: "", password: "" });
@@ -12,6 +12,7 @@ function Auth({ onAuthSuccess }) {
     e.preventDefault();
     try {
       const response = isRegister ? await register(form) : await login(form);
+      axios.defaults.headers.common.Authorization = `Bearer ${response.access}`;
       localStorage.setItem("token", response.access);
       onAuthSuccess();
     } catch (error) {

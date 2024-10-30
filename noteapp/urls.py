@@ -11,4 +11,4 @@ urlpatterns = [
     path("api/", include(notes_urls)),  # Include URLs from notes app
     path("auth/", include(accounts_urls)),
 ]
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -18,9 +18,7 @@ urlpatterns = [
         name="note-audios",
     ),
     path("notes/<int:pk>/", NoteDetailView.as_view(), name="note-detail"),
-    path(
-        "notes/<int:note_id>", NoteDeleteView.as_view(), name="note-delete"
-    ),  # Delete note
+    path("notes/<int:note_id>", NoteDeleteView.as_view(), name="note-delete"),
     path(
         "record/<int:note_id>",
         AudioUploadView.as_view(),
