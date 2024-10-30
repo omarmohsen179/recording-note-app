@@ -1,0 +1,59 @@
+/* styles.css */
+.App {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+  /* width: 100vw; */
+}
+
+.App div {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 5px auto;
+}
+
+.App h2 {
+  text-align: center;
+  color: #333;
+}
+
+.App form {
+  display: flex;
+  flex-direction: column;
+}
+
+.App input {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.App button {
+  padding: 10px;
+  /* background-color: #007bff; */
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.App button:hover {
+  background-color: #f0f0f0;
+}
+
+.App button:last-of-type {
+  background: transparent;
+  color: #007bff;
+  margin-top: 15px;
+  border: none;
+}
+
+.App button:last-of-type:hover {
+  text-decoration: underline;
+}
